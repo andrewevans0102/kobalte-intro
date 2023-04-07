@@ -1,0 +1,29 @@
+body,
+html {
+    margin: 0;
+    height: 100%;
+}
+.app {
+    width: 100%;
+}
+.link {
+    display: flex;
+    justify-content: space-evenly;
+}
+body {
+    background-color: #eeeeee;
+    font-family: 'Montserrat', sans-serif;
+    padding: 50px 50px 0 50px;
+}
+nav {
+    padding: 20px 20px 20px 0;
+}
+nav a {
+    padding: 10px;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 3px;
+    color: rgb(0, 110, 255);
+    font-weight: bold;
+    margin-right: 15px;
+}

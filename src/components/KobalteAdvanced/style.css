@@ -1,0 +1,232 @@
+main {
+    margin: 100px;
+}
+
+section {
+    padding: 50px;
+    border: solid;
+}
+
+.progress {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 300px;
+}
+.progress__label-container {
+    display: flex;
+    justify-content: space-between;
+}
+.progress__label,
+.progress__value-label {
+    color: hsl(240 4% 16%);
+    font-size: 14px;
+}
+.progress__track {
+    height: 10px;
+    background-color: hsl(240 6% 90%);
+}
+.progress__fill {
+    background-color: hsl(200 98% 39%);
+    height: 100%;
+    width: var(--kb-progress-fill-width);
+    transition: width 250ms linear;
+}
+.progress__fill[data-progress='complete'] {
+    background-color: #16a34a;
+}
+
+.hovercard__trigger {
+    outline: none;
+    color: hsl(201 96% 32%);
+    font-size: 16px;
+}
+.hovercard__trigger:hover {
+    text-decoration: underline;
+}
+.hovercard__trigger:focus-visible {
+    outline: 2px solid hsl(200 98% 39%);
+    outline-offset: 2px;
+}
+.hovercard__content {
+    z-index: 50;
+    max-width: min(calc(100vw - 16px), 380px);
+    border: 1px solid hsl(240 5% 84%);
+    border-radius: 6px;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transform-origin: var(--kb-hovercard-content-transform-origin);
+    animation: contentHide 250ms ease-in forwards;
+}
+.hovercard__content[data-expanded] {
+    animation: contentShow 250ms ease-out;
+}
+.hovercard__title {
+    color: hsl(240 6% 10%);
+    font-size: 16px;
+    font-weight: 600;
+}
+.hovercard__description {
+    font-size: 14px;
+    color: hsl(240 5% 26%);
+}
+.hovercard__avatar {
+    height: 56px;
+    width: 56px;
+}
+.popover__trigger {
+    appearance: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: auto;
+    outline: none;
+    border-radius: 6px;
+    padding: 0 16px;
+    background-color: hsl(200 98% 39%);
+    color: white;
+    font-size: 16px;
+    line-height: 0;
+    transition: 250ms background-color;
+}
+.popover__trigger:hover {
+    background-color: hsl(201 96% 32%);
+}
+.popover__trigger:focus-visible {
+    outline: 2px solid hsl(200 98% 39%);
+    outline-offset: 2px;
+}
+.popover__trigger:active {
+    background-color: hsl(201 90% 27%);
+}
+.popover__content {
+    z-index: 50;
+    max-width: min(calc(100vw - 16px), 380px);
+    border: 1px solid hsl(240 5% 84%);
+    border-radius: 6px;
+    padding: 12px;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transform-origin: var(--kb-popover-content-transform-origin);
+    animation: contentHide 250ms ease-in forwards;
+}
+.popover__content[data-expanded] {
+    animation: contentShow 250ms ease-out;
+}
+.popover__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+.popover__close-button {
+    height: 16px;
+    width: 16px;
+    color: hsl(240 5% 34%);
+}
+.popover__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(240 6% 10%);
+}
+.popover__description {
+    font-size: 14px;
+    color: hsl(240 5% 26%);
+}
+.tabs {
+    width: 100%;
+}
+.tabs[data-orientation='vertical'] {
+    display: flex;
+}
+.tabs__list {
+    position: relative;
+    display: flex;
+}
+.tabs__list[data-orientation='horizontal'] {
+    align-items: center;
+    border-bottom: 1px solid hsl(240 5% 84%);
+}
+.tabs__list[data-orientation='vertical'] {
+    flex-direction: column;
+    align-items: stretch;
+    border-right: 1px solid hsl(240 5% 84%);
+}
+.tabs__indicator {
+    position: absolute;
+    background-color: hsl(200 98% 39%);
+    transition: all 250ms;
+}
+.tabs__indicator[data-orientation='horizontal'] {
+    bottom: -1px;
+    height: 2px;
+}
+.tabs__indicator[data-orientation='vertical'] {
+    right: -1px;
+    width: 2px;
+}
+.tabs__trigger {
+    display: inline-block;
+    padding: 8px 16px;
+    outline: none;
+}
+.tabs__trigger:hover {
+    background-color: hsl(0 0% 98%);
+    color: hsl(240 5% 34%);
+}
+.tabs__trigger:focus-visible {
+    background-color: hsl(240 5% 96%);
+}
+.tabs__trigger[data-disabled],
+.tabs__trigger[data-disabled]:hover {
+    opacity: 0.5;
+    background-color: transparent;
+}
+.tabs__content {
+    padding: 16px;
+}
+@keyframes contentShow {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes contentHide {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+}
+
+@keyframes contentShow {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes contentHide {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+}
